@@ -9,11 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DiscoverPage implements OnInit {
   loadedPlace: Place[];
+  listLoadPlace: Place[];
 
   constructor(private placesServices: PlacesService) { }
 
   ngOnInit() {
     this.loadedPlace = this.placesServices.places;
+    this.listLoadPlace = this.loadedPlace.slice(1);
   }
 
 }
